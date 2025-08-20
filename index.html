@@ -12,12 +12,17 @@
     <header>
         <nav class="container">
             <a href="index.html" class="logo">ProdM.</a>
-            <ul>
+            <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="dashboard.html">Dashboard</a></li>
                 <li><a href="create.html">Add Product</a></li>
-                <li><a href="search.html">Search</a></li>
             </ul>
+            <form action="search.html" method="GET" class="nav-search-form">
+                <input type="search" name="query" placeholder="Search..." class="nav-search-input">
+                <button type="submit" aria-label="Search button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </button>
+            </form>
         </nav>
     </header>
 
@@ -30,32 +35,57 @@
             </div>
         </section>
 
-        <section class="text-carousel-section container">
-            <h2 class="section-title">What Our Users Say</h2>
-            <div class="carousel panel" aria-roledescription="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active" role="group" aria-label="slide 1 of 3">
-                        <p class="testimonial-text">"This is the cleanest and most intuitive product management tool I have ever used. It's a joy to work with."</p>
-                        <p class="testimonial-author">- Designer at TechCorp</p>
+        <section class="product-carousel-section container">
+            <h2 class="section-title">New Arrivals</h2>
+            <div class="carousel-3d-container">
+                <div class="carousel-3d">
+                    <div class="carousel-3d-item">
+                        <div class="product-card panel">
+                            <h3 class="product-name">Aura Smart Lamp</h3>
+                            <p class="product-category">Lighting</p>
+                            <span class="product-price">$129.00</span>
+                        </div>
                     </div>
-                    <div class="carousel-item" role="group" aria-label="slide 2 of 3">
-                        <p class="testimonial-text">"The minimalist design helps me focus on what's important: my products. No clutter, just pure efficiency."</p>
-                        <p class="testimonial-author">- Product Manager at InnovateCo</p>
+                    <div class="carousel-3d-item">
+                        <div class="product-card panel">
+                            <h3 class="product-name">Ergo-Flow Chair</h3>
+                            <p class="product-category">Furniture</p>
+                            <span class="product-price">$499.00</span>
+                        </div>
                     </div>
-                    <div class="carousel-item" role="group" aria-label="slide 3 of 3">
-                        <p class="testimonial-text">"I love the dark mode! It's easy on the eyes during late-night work sessions. A small feature that makes a huge difference."</p>
-                        <p class="testimonial-author">- Developer at CodeStitch</p>
+                    <div class="carousel-3d-item">
+                        <div class="product-card panel">
+                            <h3 class="product-name">Momentum Keyboard</h3>
+                            <p class="product-category">Electronics</p>
+                            <span class="product-price">$189.00</span>
+                        </div>
+                    </div>
+                    <div class="carousel-3d-item">
+                       <div class="product-card panel">
+                            <h3 class="product-name">Atmos Headphones</h3>
+                            <p class="product-category">Audio</p>
+                            <span class="product-price">$249.00</span>
+                        </div>
+                    </div>
+                    <div class="carousel-3d-item">
+                        <div class="product-card panel">
+                            <h3 class="product-name">Flow Desk Mat</h3>
+                            <p class="product-category">Accessories</p>
+                            <span class="product-price">$49.00</span>
+                        </div>
+                    </div>
+                     <div class="carousel-3d-item">
+                        <div class="product-card panel">
+                            <h3 class="product-name">Orbit Wireless Charger</h3>
+                            <p class="product-category">Accessories</p>
+                            <span class="product-price">$79.00</span>
+                        </div>
                     </div>
                 </div>
-
-                <button class="carousel-control prev" aria-label="Previous slide">&lt;</button>
-                <button class="carousel-control next" aria-label="Next slide">&gt;</button>
-
-                <div class="carousel-indicators">
-                    <button class="indicator active" aria-label="Go to slide 1"></button>
-                    <button class="indicator" aria-label="Go to slide 2"></button>
-                    <button class="indicator" aria-label="Go to slide 3"></button>
-                </div>
+            </div>
+            <div class="carousel-3d-controls">
+                <button class="carousel-3d-prev">&lt;</button>
+                <button class="carousel-3d-next">&gt;</button>
             </div>
         </section>
 

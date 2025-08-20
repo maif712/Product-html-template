@@ -12,12 +12,17 @@
     <header>
         <nav class="container">
             <a href="index.html" class="logo">ProdM.</a>
-            <ul>
+            <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="dashboard.html">Dashboard</a></li>
                 <li><a href="create.html">Add Product</a></li>
-                <li><a href="search.html">Search</a></li>
             </ul>
+            <form action="search.html" method="GET" class="nav-search-form">
+                <input type="search" name="query" placeholder="Search..." class="nav-search-input">
+                <button type="submit" aria-label="Search button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </button>
+            </form>
         </nav>
     </header>
 

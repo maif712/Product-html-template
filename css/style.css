@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
 /*=============================================
 =            Global Styles            =
 =============================================*/
@@ -6,31 +8,31 @@
   CSS Variables (Themes)
 ---------------------------------*/
 :root {
-    --bg-color: #f8f9fa;
-    --text-color: #212529;
-    --primary-color: #007bff;
-    --secondary-color: #6c757d;
-    --panel-bg-color: rgba(255, 255, 255, 0.7);
-    --panel-border-color: #dee2e6;
-    --shadow-color: rgba(0, 0, 0, 0.1);
-    --success-color: #28a745;
-    --error-color: #dc3545;
-    --link-color: #007bff;
-    --hover-color: #0056b3;
+    --bg-color: #f9f9f9;
+    --text-color: #111827;
+    --primary-color: #4f46e5;
+    --secondary-color: #6b7280;
+    --panel-bg-color: rgba(255, 255, 255, 0.6);
+    --panel-border-color: #e5e7eb;
+    --shadow-color: rgba(79, 70, 229, 0.1);
+    --success-color: #10b981;
+    --error-color: #ef4444;
+    --link-color: var(--primary-color);
+    --hover-color: #4338ca;
 }
 
 [data-theme="dark"] {
-    --bg-color: #1a1a1a;
-    --text-color: #e9ecef;
-    --primary-color: #0d6efd;
-    --secondary-color: #adb5bd;
-    --panel-bg-color: rgba(33, 37, 41, 0.7);
-    --panel-border-color: #495057;
-    --shadow-color: rgba(0, 0, 0, 0.4);
-    --success-color: #198754;
-    --error-color: #ff4d4f;
-    --link-color: #3b82f6;
-    --hover-color: #60a5fa;
+    --bg-color: #111827;
+    --text-color: #f9fafb;
+    --primary-color: #6366f1;
+    --secondary-color: #9ca3af;
+    --panel-bg-color: rgba(31, 41, 55, 0.6);
+    --panel-border-color: #374151;
+    --shadow-color: rgba(99, 102, 241, 0.2);
+    --success-color: #34d399;
+    --error-color: #f87171;
+    --link-color: var(--primary-color);
+    --hover-color: #818cf8;
 }
 
 /*---------------------------------
@@ -42,15 +44,17 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
-    transition: background-color 0.3s ease, color 0.3s ease;
     font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /*---------------------------------
@@ -73,12 +77,12 @@ p {
 a {
     color: var(--link-color);
     text-decoration: none;
-    transition: color 0.2s ease;
+    transition: color 0.3s ease;
 }
 
 a:hover {
     color: var(--hover-color);
-    text-decoration: underline;
+    text-decoration: none; /* Remove underline on hover for a cleaner look */
 }
 
 /*---------------------------------
@@ -106,7 +110,13 @@ a:hover {
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
     border-radius: 0.5rem;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.3s ease;
+    transform: scale(1);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px -5px var(--shadow-color);
 }
 
 .btn-primary {
@@ -116,18 +126,20 @@ a:hover {
 }
 
 .btn-primary:hover {
-    opacity: 0.9;
-    text-decoration: none;
+    color: #fff;
+    background-color: var(--hover-color);
+    border-color: var(--hover-color);
 }
 
 .btn-secondary {
     color: var(--text-color);
-    background-color: transparent;
+    background-color: var(--panel-bg-color);
     border-color: var(--panel-border-color);
 }
 
 .btn-secondary:hover {
     background-color: var(--panel-border-color);
+    border-color: var(--hover-color);
 }
 
 .btn-danger {
@@ -137,9 +149,8 @@ a:hover {
 }
 
 .btn-danger:hover {
-    opacity: 0.85;
-    text-decoration: none;
     color: #fff;
+    opacity: 0.85;
 }
 
 /*---------------------------------
@@ -148,11 +159,17 @@ a:hover {
 .panel {
     background-color: var(--panel-bg-color);
     border: 1px solid var(--panel-border-color);
-    border-radius: 0.75rem;
+    border-radius: 1rem;
     padding: 2rem;
-    box-shadow: 0 8px 32px 0 var(--shadow-color);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    box-shadow: 0 4px 6px -1px var(--shadow-color), 0 2px 4px -2px var(--shadow-color);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.panel:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px var(--shadow-color), 0 4px 6px -2px var(--shadow-color);
 }
 
 /*---------------------------------
@@ -192,6 +209,77 @@ nav ul {
 nav ul li a {
     font-weight: 500;
     text-decoration: none;
+    transition: color 0.3s ease;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Nav Search Form */
+.nav-search-form {
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-color);
+    border: 1px solid var(--panel-border-color);
+    border-radius: 2rem;
+    padding: 0.25rem;
+    transition: box-shadow 0.3s ease;
+}
+
+.nav-search-form:focus-within {
+    box-shadow: 0 0 0 3px var(--shadow-color);
+    border-color: var(--primary-color);
+}
+
+.nav-search-input {
+    border: none;
+    background: transparent;
+    outline: none;
+    padding: 0.5rem 1rem;
+    width: 180px;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    transition: width 0.3s ease;
+}
+
+.nav-search-input:focus {
+    width: 240px;
+}
+
+.nav-search-form button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.nav-search-form button:hover {
+    background-color: var(--hover-color);
+}
+
+.nav-search-form button svg {
+    stroke: #fff;
 }
 
 

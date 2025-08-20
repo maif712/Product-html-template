@@ -41,99 +41,75 @@
 }
 
 /*---------------------------------
-  Carousel
+  3D Product Carousel
 ---------------------------------*/
-.text-carousel-section {
+.product-carousel-section {
     padding-top: 4rem;
     padding-bottom: 4rem;
 }
 
-.carousel {
+.carousel-3d-container {
+    perspective: 1000px;
+    width: 300px;
+    height: 200px;
+    margin: 0 auto;
     position: relative;
-    overflow: hidden;
+}
+
+.carousel-3d {
     width: 100%;
-    min-height: 250px; /* Give it some height */
-    display: flex;
-    align-items: center;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 1s ease-in-out;
 }
 
-.carousel-inner {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
+.carousel-3d-item {
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden; /* Safari */
 }
 
-.carousel-item {
-    flex: 0 0 100%;
-    padding: 2rem 4rem;
+.carousel-3d-item .product-card {
+    height: 100%;
     text-align: center;
-    /* All items are visible in the flex container, we just move the container */
-}
-
-.testimonial-text {
-    font-size: 1.5rem;
-    font-style: italic;
-    font-weight: 300;
-    line-height: 1.5;
-    margin-bottom: 1.5rem;
-}
-
-.testimonial-author {
-    font-weight: 600;
-    color: var(--primary-color);
-}
-
-/* Controls */
-.carousel-control {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0,0,0,0.2);
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-    z-index: 10;
-}
-
-.carousel-control:hover {
-    background-color: rgba(0,0,0,0.5);
-}
-
-.carousel-control.prev {
-    left: 15px;
-}
-
-.carousel-control.next {
-    right: 15px;
-}
-
-/* Indicators */
-.carousel-indicators {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
     display: flex;
-    gap: 0.5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
 }
 
-.indicator {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.5);
-    border: 1px solid rgba(0,0,0,0.2);
+.carousel-3d-item .product-card:hover {
+    transform: translateY(0) scale(1.05); /* Override panel hover for carousel */
+    border-color: var(--primary-color);
+}
+
+.carousel-3d-controls {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.carousel-3d-prev,
+.carousel-3d-next {
+    background: var(--panel-bg-color);
+    border: 1px solid var(--panel-border-color);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+    transition: all 0.3s ease;
 }
 
-.indicator.active {
-    background-color: white;
+.carousel-3d-prev:hover,
+.carousel-3d-next:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
 }
 
 /*---------------------------------

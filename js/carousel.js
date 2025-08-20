@@ -1,41 +1,38 @@
 /*!
- * Carousel JavaScript
+ * 3D Carousel JavaScript
  */
 document.addEventListener('DOMContentLoaded', () => {
-    const carousel = document.querySelector('.carousel');
+    const carousel = document.querySelector('.carousel-3d');
     if (!carousel) return;
 
-    const inner = carousel.querySelector('.carousel-inner');
-    const items = Array.from(inner.children);
-    const prevButton = carousel.querySelector('.carousel-control.prev');
-    const nextButton = carousel.querySelector('.carousel-control.next');
-    const indicators = Array.from(carousel.querySelectorAll('.indicator'));
+    const items = document.querySelectorAll('.carousel-3d-item');
+    const prevButton = document.querySelector('.carousel-3d-prev');
+    const nextButton = document.querySelector('.carousel-3d-next');
+
+    const totalItems = items.length;
+    const angle = 360 / totalItems;
+    const radius = 300; // Adjust this to change the circle radius
 
     let currentIndex = 0;
     let autoPlayInterval;
 
-    function goToSlide(index) {
-        // Clamp index to be within bounds
-        if (index < 0) index = items.length - 1;
-        if (index >= items.length) index = 0;
-
-        inner.style.transform = `translateX(-${index * 100}%)`;
-
-        // Update active classes
+    function setupCarousel() {
         items.forEach((item, i) => {
-            item.classList.toggle('active', i === index);
+            const rotation = i * angle;
+            item.style.transform = `rotateY(${rotation}deg) translateZ(${radius}px)`;
         });
-        indicators.forEach((indicator, i) => {
-            indicator.classList.toggle('active', i === index);
-        });
+    }
 
-        currentIndex = index;
+    function rotateCarousel() {
+        const targetAngle = -currentIndex * angle;
+        carousel.style.transform = `rotateY(${targetAngle}deg)`;
     }
 
     function startAutoPlay() {
         autoPlayInterval = setInterval(() => {
-            goToSlide(currentIndex + 1);
-        }, 5000); // Change slide every 5 seconds
+            currentIndex++;
+            rotateCarousel();
+        }, 4000); // Change slide every 4 seconds
     }
 
     function stopAutoPlay() {
@@ -43,24 +40,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Event Listeners
-    prevButton.addEventListener('click', () => {
-        goToSlide(currentIndex - 1);
-    });
-
     nextButton.addEventListener('click', () => {
-        goToSlide(currentIndex + 1);
+        currentIndex++;
+        rotateCarousel();
     });
 
-    indicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', () => {
-            goToSlide(index);
-        });
+    prevButton.addEventListener('click', () => {
+        currentIndex--;
+        rotateCarousel();
     });
 
-    carousel.addEventListener('mouseenter', stopAutoPlay);
-    carousel.addEventListener('mouseleave', startAutoPlay);
+    // Pause on hover
+    document.querySelector('.carousel-3d-container').addEventListener('mouseenter', stopAutoPlay);
+    document.querySelector('.carousel-3d-container').addEventListener('mouseleave', startAutoPlay);
+
 
     // Initial setup
-    goToSlide(0);
+    setupCarousel();
+    rotateCarousel();
     startAutoPlay();
 });
