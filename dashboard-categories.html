@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category Management - ProdM</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/dashboard-categories.css">
+</head>
+<body>
+
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="index.html" class="logo">ProdM.</a>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="index.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.68-8.69a2.25 2.25 0 00-3.18 0l-8.69 8.69a.75.75 0 001.06 1.06l8.69-8.69z" /><path d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z" /></svg><span>Home</span></a></li>
+                    <li><a href="dashboard.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M10.5 4.5a.75.75 0 00-1.5 0v15a.75.75 0 001.5 0v-15z" /><path d="M6 6.75A.75.75 0 004.5 6v10.5a.75.75 0 001.5 0V6.75zM15 1.5A.75.75 0 0115.75 3v15.75a.75.75 0 01-1.5 0V3A.75.75 0 0115 1.5z" /><path d="M19.5 9.75A.75.75 0 0018 9v3a.75.75 0 001.5 0v-3z" /></svg><span>Dashboard</span></a></li>
+                    <li class="active"><a href="dashboard-categories.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path fill-rule="evenodd" d="M.75 4.75A.75.75 0 011.5 4h14.25a.75.75 0 010 1.5H1.5A.75.75 0 01.75 4.75zM1.5 10a.75.75 0 000 1.5h14.25a.75.75 0 000-1.5H1.5zM1.5 15.25a.75.75 0 01.75-.75h14.25a.75.75 0 010 1.5H1.5a.75.75 0 01-.75-.75z" clip-rule="evenodd" /></svg><span>Categories</span></a></li>
+                    <li><a href="create.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 9a.75.75 0 00-1.5 0v2.25H9a.75.75 0 000 1.5h2.25V15a.75.75 0 001.5 0v-2.25H15a.75.75 0 000-1.5h-2.25V9z" clip-rule="evenodd" /></svg><span>Add Product</span></a></li>
+                    <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path fill-rule="evenodd" d="M2.25 2.25a.75.75 0 000 1.5H3v10.5a3 3 0 003 3h1.21l-1.172 3.513a.75.75 0 001.424.474L10.93 18H13.07l3.498 3.737a.75.75 0 001.424-.474L16.79 18h1.21a3 3 0 003-3V3.75h.75a.75.75 0 000-1.5H2.25zM6 6a.75.75 0 01.75.75v3a.75.75 0 01-1.5 0v-3A.75.75 0 016 6zm4.5 0A.75.75 0 0111.25 6v5.25a.75.75 0 01-1.5 0V6A.75.75 0 0110.5 6zm3.75 0a.75.75 0 01.75.75v6.75a.75.75 0 01-1.5 0V6.75a.75.75 0 01.75-.75z" clip-rule="evenodd" /></svg><span>Analytics</span></a></li>
+                    <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path fill-rule="evenodd" d="M11.078 2.25c-.917 0-1.699.663-1.946 1.55l-.29 1.012a.75.75 0 00.34 1.05l1.19.715a.75.75 0 001.05-.34l.29-1.012A2.25 2.25 0 0011.078 2.25zM12.242 4.13l.29 1.012a.75.75 0 01-.34 1.05l-1.19.715a.75.75 0 01-1.05-.34l-.29-1.012a.75.75 0 01.946-.805l1.634.486zM15.945 6.48l1.012-.29a.75.75 0 01.805.946l-.486 1.634a.75.75 0 01-1.05.34l-1.19-.715a.75.75 0 01.34-1.05zm-2.828 2.828l1.19.715a.75.75 0 001.05-.34l.486-1.634a.75.75 0 00-.805-.946l-1.012.29a.75.75 0 00-.34 1.05zM18.19 10.18l1.012.29a.75.75 0 01.805.946l-.486 1.634a.75.75 0 01-1.05.34l-1.19-.715a.75.75 0 01.34-1.05zm-2.828 2.828l1.19.715a.75.75 0 001.05-.34l.486-1.634a.75.75 0 00-.805-.946l-1.012.29a.75.75 0 00-.34 1.05zM12 15.75a3.75 3.75 0 100-7.5 3.75 3.75 0 000 7.5zM6.48 15.945l-.29 1.012a.75.75 0 01-.946.805l-1.634-.486a.75.75 0 01-.805-.946l.29-1.012a.75.75 0 001.05-.34l1.19.715a.75.75 0 00.34 1.05zM4.13 12.242l-1.012.29a.75.75 0 01-.946-.805l.486-1.634a.75.75 0 011.05-.34l1.19.715a.75.75 0 01-.34 1.05zM6.48 8.055l-.29-1.012a.75.75 0 01.946-.805l1.634.486a.75.75 0 01.805.946l-.29 1.012a.75.75 0 00-1.05.34l-1.19-.715a.75.75 0 00-.34-1.05z" clip-rule="evenodd" /></svg><span>Settings</span></a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <p>Logged in as <strong>Guest</strong></p>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <h1>Category Management</h1>
+                <div class="header-actions">
+                    <a href="create-category.html" class="btn btn-primary">Add New Category</a>
+                    <button id="theme-toggle-dash" class="theme-toggle-dash" aria-label="Toggle dark mode">
+                        <span class="icon-sun">☀️</span>
+                        <span class="icon-moon">🌙</span>
+                    </button>
+                </div>
+            </header>
+
+            <div class="content-panel panel">
+                <div class="table-responsive">
+                    <table class="product-table">
+                        <thead>
+                            <tr>
+                                <th>Category Name</th>
+                                <th>Description</th>
+                                <th>Product Count</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Furniture</td>
+                                <td>Chairs, desks, and other office essentials.</td>
+                                <td>25</td>
+                                <td class="actions-cell">
+                                    <a href="#" title="Edit">✏️</a>
+                                    <a href="#" title="Delete">🗑️</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Electronics</td>
+                                <td>Keyboards, mice, and other peripherals.</td>
+                                <td>42</td>
+                                <td class="actions-cell">
+                                    <a href="#" title="Edit">✏️</a>
+                                    <a href="#" title="Delete">🗑️</a>
+                                </td>
+                            </tr>
+                             <tr>
+                                <td>Lighting</td>
+                                <td>Lamps and other lighting solutions.</td>
+                                <td>12</td>
+                                <td class="actions-cell">
+                                    <a href="#" title="Edit">✏️</a>
+                                    <a href="#" title="Delete">🗑️</a>
+                                </td>
+                            </tr>
+                             <tr>
+                                <td>Audio</td>
+                                <td>Headphones, speakers, and microphones.</td>
+                                <td>18</td>
+                                <td class="actions-cell">
+                                    <a href="#" title="Edit">✏️</a>
+                                    <a href="#" title="Delete">🗑️</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div class="toast-container"></div>
+    <script src="js/main.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
