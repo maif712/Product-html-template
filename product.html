@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - ProdM</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/product.css">
+</head>
+<body>
+
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">ProdM.</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="create.html">Add Product</a></li>
+                <li><a href="search.html">Search</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="product-details-container panel">
+            <div class="product-header">
+                <div>
+                    <h1 class="product-name">Minimalist Desk Chair</h1>
+                    <p class="product-brand">by <a href="#">ComfySit</a></p>
+                </div>
+                <div class="product-actions">
+                    <a href="edit.html" class="btn btn-secondary">Edit</a>
+                    <a href="delete.html" class="btn btn-danger">Delete</a>
+                </div>
+            </div>
+
+            <div class="product-body">
+                <div class="product-main-details">
+                    <p class="product-description">
+                        A sleek, ergonomic chair designed for modern workspaces. Features a breathable mesh back, adjustable lumbar support, and a sturdy aluminum base. Perfect for long hours of comfortable seating.
+                    </p>
+
+                    <div class="product-pricing">
+                        <span class="price-label">Price:</span>
+                        <span class="price-value">$299.99</span>
+                        <span class="stock-status in-stock">In Stock (150 units)</span>
+                    </div>
+
+                    <div class="product-tags">
+                        <strong>Tags:</strong>
+                        <span class="tag">chair</span>
+                        <span class="tag">furniture</span>
+                        <span class="tag">office</span>
+                        <span class="tag">minimalist</span>
+                    </div>
+                </div>
+
+                <div class="product-secondary-details">
+                    <h3 class="details-title">Specifications</h3>
+                    <ul class="spec-list">
+                        <li><strong>SKU:</strong> <span>CS-MDC-BL-2024</span></li>
+                        <li><strong>Category:</strong> <span>Furniture</span></li>
+                        <li><strong>Color:</strong> <span>Black</span></li>
+                        <li><strong>Material:</strong> <span>Mesh, Aluminum</span></li>
+                        <li><strong>Dimensions:</strong> <span>25"W x 25"D x 45"H</span></li>
+                        <li><strong>Weight:</strong> <span>15.5 kg</span></li>
+                        <li><strong>Rating:</strong> <span>4.8 / 5.0</span></li>
+                        <li><strong>Status:</strong> <span>Active</span></li>
+                        <li><strong>Featured:</strong> <span>Yes</span></li>
+                        <li><strong>Date Added:</strong> <span>2024-01-15</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 ProdM. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">☀️</button>
+
+    <div class="toast-container"></div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

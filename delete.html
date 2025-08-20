@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Deletion - ProdM</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/delete.css">
+</head>
+<body>
+
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">ProdM.</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="create.html">Add Product</a></li>
+                <li><a href="search.html">Search</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="delete-container panel">
+            <div class="warning-icon">
+                <!-- Using an SVG for a modern look -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+                </svg>
+            </div>
+            <h1 class="delete-title">Are you sure?</h1>
+            <p class="delete-text">
+                You are about to permanently delete the product: <strong>Minimalist Desk Chair</strong>. This action cannot be undone.
+            </p>
+            <div class="delete-actions">
+                <form action="#" method="POST">
+                    <button type="submit" class="btn btn-danger">Yes, Delete Product</button>
+                </form>
+                <a href="dashboard.html" class="btn btn-secondary">Cancel</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 ProdM. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">☀️</button>
+
+    <div class="toast-container"></div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

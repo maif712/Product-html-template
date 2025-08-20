@@ -1,0 +1,196 @@
+/*=============================================
+=            Index Page Styles            =
+=============================================*/
+
+/*---------------------------------
+  Hero Section
+---------------------------------*/
+.hero {
+    padding: 6rem 0;
+    text-align: center;
+    background: linear-gradient(45deg, var(--primary-color), var(--hover-color));
+    color: #fff;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    opacity: 0.9;
+}
+
+.hero .btn-primary {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/*---------------------------------
+  Shared Section Styles
+---------------------------------*/
+.section-title {
+    text-align: center;
+    font-size: 2.25rem;
+    margin-bottom: 2rem;
+}
+
+/*---------------------------------
+  Carousel
+---------------------------------*/
+.text-carousel-section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    min-height: 250px; /* Give it some height */
+    display: flex;
+    align-items: center;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    flex: 0 0 100%;
+    padding: 2rem 4rem;
+    text-align: center;
+    /* All items are visible in the flex container, we just move the container */
+}
+
+.testimonial-text {
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-author {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* Controls */
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.2);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    z-index: 10;
+}
+
+.carousel-control:hover {
+    background-color: rgba(0,0,0,0.5);
+}
+
+.carousel-control.prev {
+    left: 15px;
+}
+
+.carousel-control.next {
+    right: 15px;
+}
+
+/* Indicators */
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.indicator.active {
+    background-color: white;
+}
+
+/*---------------------------------
+  Featured Products
+---------------------------------*/
+.featured-products-section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.product-name {
+    font-size: 1.25rem;
+    margin-right: 1rem;
+}
+
+.product-price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    white-space: nowrap;
+}
+
+.product-description {
+    color: var(--secondary-color);
+    flex-grow: 1;
+    margin-bottom: 1.5rem;
+}
+
+.product-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--panel-border-color);
+    padding-top: 1rem;
+}
+
+.product-category {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--secondary-color);
+}

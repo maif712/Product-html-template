@@ -1,0 +1,43 @@
+/*=============================================
+=            Delete Page Styles            =
+=============================================*/
+
+.delete-container {
+    max-width: 600px;
+    margin: 4rem auto;
+    text-align: center;
+}
+
+.warning-icon {
+    font-size: 4rem;
+    color: var(--error-color);
+    margin-bottom: 1.5rem;
+}
+
+.warning-icon svg {
+    width: 80px;
+    height: 80px;
+}
+
+.delete-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--error-color);
+}
+
+.delete-text {
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    margin-bottom: 2.5rem;
+}
+
+.delete-text strong {
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.delete-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}

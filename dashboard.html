@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - ProdM</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="index.html" class="logo">ProdM.</a>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active"><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="create.html">Add Product</a></li>
+                    <li><a href="search.html">Search</a></li>
+                    <li><a href="#">Analytics</a></li>
+                    <li><a href="#">Settings</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <p>Logged in as <strong>Guest</strong></p>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <h1>Products Dashboard</h1>
+                <div class="header-actions">
+                    <a href="create.html" class="btn btn-primary">Add New Product</a>
+                    <button id="theme-toggle" class="theme-toggle-dash" aria-label="Toggle dark mode">☀️</button>
+                </div>
+            </header>
+
+            <div class="content-panel panel">
+                <div class="table-responsive">
+                    <table class="product-table">
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox" aria-label="Select all products"></th>
+                                <th>Product Name</th>
+                                <th>SKU</th>
+                                <th>Category</th>
+                                <th>Price</th>
+                                <th>Stock</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Row 1 -->
+                            <tr>
+                                <td><input type="checkbox" aria-label="Select product"></td>
+                                <td>Minimalist Desk Chair</td>
+                                <td>CS-MDC-BL-2024</td>
+                                <td>Furniture</td>
+                                <td>$299.99</td>
+                                <td>150</td>
+                                <td><span class="status-badge active">Active</span></td>
+                                <td class="actions-cell">
+                                    <a href="edit.html" title="Edit">✏️</a>
+                                    <a href="delete.html" title="Delete">🗑️</a>
+                                    <a href="product.html" title="View">👁️</a>
+                                </td>
+                            </tr>
+                            <!-- Row 2 -->
+                             <tr>
+                                <td><input type="checkbox" aria-label="Select product"></td>
+                                <td>Wireless Mechanical Keyboard</td>
+                                <td>WMK-75-RGB-2024</td>
+                                <td>Electronics</td>
+                                <td>$149.00</td>
+                                <td>210</td>
+                                <td><span class="status-badge active">Active</span></td>
+                                <td class="actions-cell">
+                                    <a href="edit.html" title="Edit">✏️</a>
+                                    <a href="delete.html" title="Delete">🗑️</a>
+                                    <a href="product.html" title="View">👁️</a>
+                                </td>
+                            </tr>
+                             <!-- Row 3 -->
+                             <tr>
+                                <td><input type="checkbox" aria-label="Select product"></td>
+                                <td>Smart LED Desk Lamp</td>
+                                <td>SLDL-WH-2024</td>
+                                <td>Lighting</td>
+                                <td>$89.50</td>
+                                <td>300</td>
+                                <td><span class="status-badge active">Active</span></td>
+                                <td class="actions-cell">
+                                    <a href="edit.html" title="Edit">✏️</a>
+                                    <a href="delete.html" title="Delete">🗑️</a>
+                                    <a href="product.html" title="View">👁️</a>
+                                </td>
+                            </tr>
+                             <!-- Row 4 -->
+                             <tr>
+                                <td><input type="checkbox" aria-label="Select product"></td>
+                                <td>Noise-Cancelling Headphones</td>
+                                <td>NCH-BLK-V2-2023</td>
+                                <td>Audio</td>
+                                <td>$349.00</td>
+                                <td>80</td>
+                                <td><span class="status-badge archived">Archived</span></td>
+                                <td class="actions-cell">
+                                    <a href="edit.html" title="Edit">✏️</a>
+                                    <a href="delete.html" title="Delete">🗑️</a>
+                                    <a href="product.html" title="View">👁️</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="pagination">
+                    <a href="#" class="page-link disabled">&laquo; Prev</a>
+                    <a href="#" class="page-link active">1</a>
+                    <a href="#" class="page-link">2</a>
+                    <a href="#" class="page-link">3</a>
+                    <span class="page-link-ellipsis">...</span>
+                    <a href="#" class="page-link">10</a>
+                    <a href="#" class="page-link">Next &raquo;</a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div class="toast-container"></div>
+    <script src="js/main.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

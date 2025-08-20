@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Management</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">ProdM.</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="create.html">Add Product</a></li>
+                <li><a href="search.html">Search</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1 class="hero-title">Modern Product Management</h1>
+                <p class="hero-subtitle">Streamline your workflow with an intuitive, fast, and modern interface.</p>
+                <a href="dashboard.html" class="btn btn-primary">Go to Dashboard</a>
+            </div>
+        </section>
+
+        <section class="text-carousel-section container">
+            <h2 class="section-title">What Our Users Say</h2>
+            <div class="carousel panel" aria-roledescription="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" role="group" aria-label="slide 1 of 3">
+                        <p class="testimonial-text">"This is the cleanest and most intuitive product management tool I have ever used. It's a joy to work with."</p>
+                        <p class="testimonial-author">- Designer at TechCorp</p>
+                    </div>
+                    <div class="carousel-item" role="group" aria-label="slide 2 of 3">
+                        <p class="testimonial-text">"The minimalist design helps me focus on what's important: my products. No clutter, just pure efficiency."</p>
+                        <p class="testimonial-author">- Product Manager at InnovateCo</p>
+                    </div>
+                    <div class="carousel-item" role="group" aria-label="slide 3 of 3">
+                        <p class="testimonial-text">"I love the dark mode! It's easy on the eyes during late-night work sessions. A small feature that makes a huge difference."</p>
+                        <p class="testimonial-author">- Developer at CodeStitch</p>
+                    </div>
+                </div>
+
+                <button class="carousel-control prev" aria-label="Previous slide">&lt;</button>
+                <button class="carousel-control next" aria-label="Next slide">&gt;</button>
+
+                <div class="carousel-indicators">
+                    <button class="indicator active" aria-label="Go to slide 1"></button>
+                    <button class="indicator" aria-label="Go to slide 2"></button>
+                    <button class="indicator" aria-label="Go to slide 3"></button>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-products-section container">
+            <h2 class="section-title">Featured Products</h2>
+            <div class="product-grid">
+                <!-- Product Card 1 -->
+                <div class="product-card panel">
+                    <div class="product-card-header">
+                        <h3 class="product-name">Minimalist Desk Chair</h3>
+                        <span class="product-price">$299.99</span>
+                    </div>
+                    <p class="product-description">A sleek, ergonomic chair designed for modern workspaces.</p>
+                    <div class="product-card-footer">
+                        <span class="product-category">Furniture</span>
+                        <a href="product.html" class="btn btn-secondary">View Details</a>
+                    </div>
+                </div>
+                <!-- Product Card 2 -->
+                <div class="product-card panel">
+                    <div class="product-card-header">
+                        <h3 class="product-name">Wireless Mechanical Keyboard</h3>
+                        <span class="product-price">$149.00</span>
+                    </div>
+                    <p class="product-description">A compact 75% keyboard with hot-swappable switches.</p>
+                    <div class="product-card-footer">
+                        <span class="product-category">Electronics</span>
+                        <a href="product.html" class="btn btn-secondary">View Details</a>
+                    </div>
+                </div>
+                <!-- Product Card 3 -->
+                <div class="product-card panel">
+                    <div class="product-card-header">
+                        <h3 class="product-name">Smart LED Desk Lamp</h3>
+                        <span class="product-price">$89.50</span>
+                    </div>
+                    <p class="product-description">Adjustable color temperature and brightness via app.</p>
+                    <div class="product-card-footer">
+                        <span class="product-category">Lighting</span>
+                        <a href="product.html" class="btn btn-secondary">View Details</a>
+                    </div>
+                </div>
+                 <!-- Product Card 4 -->
+                 <div class="product-card panel">
+                    <div class="product-card-header">
+                        <h3 class="product-name">Noise-Cancelling Headphones</h3>
+                        <span class="product-price">$349.00</span>
+                    </div>
+                    <p class="product-description">Immerse yourself in sound with industry-leading noise cancellation.</p>
+                    <div class="product-card-footer">
+                        <span class="product-category">Audio</span>
+                        <a href="product.html" class="btn btn-secondary">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 ProdM. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">☀️</button>
+
+    <div class="toast-container"></div>
+
+    <script src="js/main.js"></script>
+    <script src="js/carousel.js"></script>
+</body>
+</html>

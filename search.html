@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Products - ProdM</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/search.css">
+</head>
+<body>
+
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">ProdM.</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="create.html">Add Product</a></li>
+                <li><a href="search.html">Search</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="search-section">
+            <h1 class="search-title">Search Products</h1>
+            <form action="#" method="GET" class="search-form">
+                <input type="search" name="query" placeholder="Search by name, category, SKU, etc..." class="search-input">
+                <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+        </section>
+
+        <section class="results-section">
+            <h2 class="results-title">Search Results for "desk"</h2>
+            <p class="results-count">Showing 2 results</p>
+
+            <div class="results-list">
+                <!-- Result 1 -->
+                <div class="product-list-item panel">
+                    <div class="product-info">
+                        <h3 class="product-name"><a href="product.html">Minimalist Desk Chair</a></h3>
+                        <p class="product-meta">
+                            <span class="product-category">Furniture</span> |
+                            <span class="product-sku">SKU: CS-MDC-BL-2024</span>
+                        </p>
+                    </div>
+                    <div class="product-actions">
+                        <span class="product-price">$299.99</span>
+                        <a href="product.html" class="btn btn-secondary">View Details</a>
+                    </div>
+                </div>
+                <!-- Result 2 -->
+                <div class="product-list-item panel">
+                    <div class="product-info">
+                        <h3 class="product-name"><a href="product.html">Smart LED Desk Lamp</a></h3>
+                        <p class="product-meta">
+                            <span class="product-category">Lighting</span> |
+                            <span class="product-sku">SKU: SLDL-WH-2024</span>
+                        </p>
+                    </div>
+                    <div class="product-actions">
+                        <span class="product-price">$89.50</span>
+                        <a href="product.html" class="btn btn-secondary">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 ProdM. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">☀️</button>
+
+    <div class="toast-container"></div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
