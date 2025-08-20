@@ -289,9 +289,26 @@ nav ul li a:hover::after {
 /*---------------------------------
   Theme Toggle Button
 ---------------------------------*/
-.theme-toggle, .theme-toggle-dash {
-    position: relative;
-    overflow: hidden;
+.theme-toggle {
+    background: var(--panel-bg-color);
+    border: 1px solid var(--panel-border-color);
+    border-radius: 2rem;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    overflow: hidden; /* For the animation */
+}
+
+.theme-toggle-dash {
+    overflow: hidden; /* For the animation */
 }
 
 .theme-toggle .icon-sun,
