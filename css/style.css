@@ -176,22 +176,25 @@ a:hover {
   Header & Navigation
 ---------------------------------*/
 header {
-    background-color: var(--panel-bg-color);
-    border-bottom: 1px solid var(--panel-border-color);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
     position: sticky;
-    top: 0;
+    top: 1rem;
     z-index: 999;
-    width: 100%;
+    padding: 0 1rem;
 }
 
 header nav {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    background-color: var(--panel-bg-color);
+    border: 1px solid var(--panel-border-color);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 2rem;
+    padding: 0.75rem 1.5rem;
+    box-shadow: 0 8px 30px -5px var(--shadow-color);
 }
 
 .logo {
@@ -308,11 +311,60 @@ nav ul li a:hover::after {
   Footer
 ---------------------------------*/
 footer {
+    background-color: var(--panel-bg-color);
     border-top: 1px solid var(--panel-border-color);
-    text-align: center;
-    padding: 2rem 0;
-    margin-top: 4rem;
+    padding: 4rem 2rem;
+    margin-top: 6rem;
+    clip-path: polygon(0 5%, 100% 0, 100% 100%, 0% 100%);
+}
+
+.footer-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.footer-column .logo {
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.footer-column h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-column ul li a {
     color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: var(--primary-color);
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-top: 1px solid var(--panel-border-color);
+    padding-top: 2rem;
+    text-align: center;
+    color: var(--secondary-color);
+    font-size: 0.9rem;
 }
 
 /*---------------------------------

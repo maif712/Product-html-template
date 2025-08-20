@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const totalItems = items.length;
     const angle = 360 / totalItems;
-    const radius = 300; // Adjust this to change the circle radius
+    const radius = 350; // This should be calculated based on item width and number of items
 
     let currentIndex = 0;
     let autoPlayInterval;
