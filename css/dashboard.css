@@ -94,6 +94,60 @@
     margin-bottom: 2rem;
 }
 
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+}
+
+.stat-card .panel:hover {
+    /* Disable panel hover effect for stat cards if needed */
+    transform: translateY(0);
+}
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #fff;
+}
+/* In a real app, these would be SVGs */
+.icon-products { background: linear-gradient(45deg, #4f46e5, #818cf8); }
+.icon-stock { background: linear-gradient(45deg, #10b981, #6ee7b7); }
+.icon-categories { background: linear-gradient(45deg, #f59e0b, #fcd34d); }
+.icon-revenue { background: linear-gradient(45deg, #ef4444, #f87171); }
+
+
+.stat-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-title {
+    font-size: 1rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.25rem;
+}
+
+.stat-value {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
 .main-header h1 {
     font-size: 2.25rem;
     font-weight: 800;
