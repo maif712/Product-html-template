@@ -4,22 +4,11 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    const themeToggles = document.querySelectorAll('#theme-toggle, #theme-toggle-dash');
+    const themeToggles = document.querySelectorAll('.theme-toggle, .theme-toggle-dash');
     const currentTheme = localStorage.getItem('theme') || 'light';
 
     // Apply the saved theme on initial load
     document.documentElement.setAttribute('data-theme', currentTheme);
-
-    const updateToggleIcons = (theme) => {
-        themeToggles.forEach(toggle => {
-            if (toggle) {
-                toggle.innerHTML = theme === 'dark' ? '🌙' : '☀️';
-            }
-        });
-    };
-
-    // Set the toggle buttons' initial state
-    updateToggleIcons(currentTheme);
 
     // Add event listener for all theme toggle buttons
     themeToggles.forEach(toggle => {
@@ -28,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 let newTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
                 document.documentElement.setAttribute('data-theme', newTheme);
                 localStorage.setItem('theme', newTheme);
-                updateToggleIcons(newTheme);
             });
         }
     });
