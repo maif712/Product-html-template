@@ -48,6 +48,8 @@
 
 .sidebar-nav ul {
     list-style: none;
+    flex-direction: column;
+    gap: 0.3rem;
 }
 
 .sidebar-nav ul li a {
@@ -171,6 +173,7 @@
     align-items: center;
     font-size: 1.4rem;
     transition: all 0.3s ease;
+    position: relative;
 }
 
 .theme-toggle-dash:hover {
@@ -181,7 +184,7 @@
 
 /* Content Panel / Table */
 .content-panel {
-    padding: 0; /* Remove default panel padding */
+    padding: 0; 
     border-radius: 1rem;
     overflow: hidden; /* To clip table corners */
 }
