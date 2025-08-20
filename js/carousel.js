@@ -1,62 +1,79 @@
 /*!
- * 3D Carousel JavaScript
+ * Coverflow Carousel JavaScript
  */
 document.addEventListener('DOMContentLoaded', () => {
     const carousel = document.querySelector('.carousel-3d');
     if (!carousel) return;
 
-    const items = document.querySelectorAll('.carousel-3d-item');
+    const items = Array.from(document.querySelectorAll('.carousel-3d-item'));
     const prevButton = document.querySelector('.carousel-3d-prev');
     const nextButton = document.querySelector('.carousel-3d-next');
 
     const totalItems = items.length;
-    const angle = 360 / totalItems;
-    const radius = 350; // This should be calculated based on item width and number of items
-
     let currentIndex = 0;
     let autoPlayInterval;
 
-    function setupCarousel() {
+    function updateCarousel() {
         items.forEach((item, i) => {
-            const rotation = i * angle;
-            item.style.transform = `rotateY(${rotation}deg) translateZ(${radius}px)`;
-        });
-    }
+            let offset = i - currentIndex;
+            if (offset < -totalItems / 2) offset += totalItems;
+            if (offset > totalItems / 2) offset -= totalItems;
 
-    function rotateCarousel() {
-        const targetAngle = -currentIndex * angle;
-        carousel.style.transform = `rotateY(${targetAngle}deg)`;
+            const scale = Math.max(0, 1 - Math.abs(offset) * 0.2);
+            const rotateY = -offset * 35;
+            const translateX = offset * (window.innerWidth < 768 ? 100 : 150);
+            const translateZ = -Math.abs(offset) * 150;
+            const zIndex = 10 - Math.abs(offset);
+            const opacity = Math.max(0, 1 - Math.abs(offset) * 0.3);
+
+            let transform = `translateX(${translateX}px) translateZ(${translateZ}px) rotateY(${rotateY}deg) scale(${scale})`;
+
+            if (offset === 0) {
+                 transform = `translateX(0) translateZ(50px) rotateY(0deg) scale(1.1)`;
+            }
+
+            item.style.transform = transform;
+            item.style.zIndex = zIndex;
+            item.style.opacity = opacity;
+        });
     }
 
     function startAutoPlay() {
         autoPlayInterval = setInterval(() => {
-            currentIndex++;
-            rotateCarousel();
-        }, 4000); // Change slide every 4 seconds
+            goToIndex(currentIndex + 1);
+        }, 4000);
     }
 
     function stopAutoPlay() {
         clearInterval(autoPlayInterval);
     }
 
+    function goToIndex(index) {
+        currentIndex = (index % totalItems + totalItems) % totalItems; // Handles positive and negative wrapping
+        updateCarousel();
+    }
+
     // Event Listeners
     nextButton.addEventListener('click', () => {
-        currentIndex++;
-        rotateCarousel();
+        goToIndex(currentIndex + 1);
     });
 
     prevButton.addEventListener('click', () => {
-        currentIndex--;
-        rotateCarousel();
+        goToIndex(currentIndex - 1);
     });
 
-    // Pause on hover
+    items.forEach((item, i) => {
+        item.addEventListener('click', () => {
+            if (i !== currentIndex) {
+                goToIndex(i);
+            }
+        });
+    });
+
     document.querySelector('.carousel-3d-container').addEventListener('mouseenter', stopAutoPlay);
     document.querySelector('.carousel-3d-container').addEventListener('mouseleave', startAutoPlay);
 
-
     // Initial setup
-    setupCarousel();
-    rotateCarousel();
+    updateCarousel();
     startAutoPlay();
 });

@@ -137,14 +137,12 @@
 }
 
 .carousel-3d-container {
-    perspective: 1200px;
-    width: 400px; /* Increase size for more impact */
-    height: 250px;
+    perspective: 1500px;
+    width: 100%;
+    max-width: 600px; /* A wider container for the coverflow effect */
+    height: 300px;
     margin: 4rem auto;
     position: relative;
-
-    /* Reflection */
-    -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, rgba(0,0,0,0.2));
 }
 
 .carousel-3d {
@@ -152,15 +150,21 @@
     height: 100%;
     position: absolute;
     transform-style: preserve-3d;
-    transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1); /* Smoother easing */
+    /* The container no longer rotates, the items do individually */
 }
 
 .carousel-3d-item {
     position: absolute;
+    left: 0; right: 0;
+    margin: 0 auto;
     width: 400px;
     height: 250px;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden; /* Safari */
+    transform-origin: center center;
+    transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1),
+                opacity 0.8s ease,
+                z-index 0.8s ease;
 }
 
 .carousel-3d-item .product-card {
