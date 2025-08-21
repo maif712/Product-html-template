@@ -34,17 +34,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Animation loop
     function animateDots() {
-        let prevDot = dots[0];
-
         // Move the first dot towards the cursor
-        prevDot.x += (cursor.x - prevDot.x) * 0.6;
-        prevDot.y += (cursor.y - prevDot.y) * 0.6;
-
-        // Animate the first dot
-        const firstDotSize = 12;
-        prevDot.element.style.width = `${firstDotSize}px`;
-        prevDot.element.style.height = `${firstDotSize}px`;
-        prevDot.element.style.transform = `translate(${prevDot.x - firstDotSize / 2}px, ${prevDot.y - firstDotSize / 2}px)`;
+        dots[0].x += (cursor.x - dots[0].x) * 0.6;
+        dots[0].y += (cursor.y - dots[0].y) * 0.6;
+        dots[0].element.style.transform = `translate(${dots[0].x - 6}px, ${dots[0].y - 6}px) scale(1)`;
+        dots[0].element.style.opacity = '1';
 
         // Animate the rest of the dots
         for (let i = 1; i < numDots; i++) {
@@ -58,13 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const scale = (numDots - i) / numDots;
             const opacity = scale * 0.7;
 
-            currentDot.element.style.transform = `translate(${currentDot.x}px, ${currentDot.y}px) scale(${scale})`;
+            currentDot.element.style.transform = `translate(${currentDot.x - (12 * scale / 2)}px, ${currentDot.y - (12 * scale / 2)}px) scale(${scale})`;
             currentDot.element.style.opacity = opacity;
-
-            // Set size of the dot
-            const size = scale * 12;
-            currentDot.element.style.width = `${size}px`;
-            currentDot.element.style.height = `${size}px`;
         }
 
         requestAnimationFrame(animateDots);
