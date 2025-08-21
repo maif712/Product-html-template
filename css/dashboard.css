@@ -174,6 +174,10 @@
     transition: all 0.3s ease;
 }
 
+.theme-toggle-dash {
+    position: relative; /* Add this */
+}
+
 .theme-toggle-dash:hover {
     transform: rotate(15deg);
     border-color: var(--primary-color);
