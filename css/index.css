@@ -120,6 +120,19 @@
 }
 
 /*---------------------------------
+  Mouse Trail
+---------------------------------*/
+.trail-dot {
+    position: fixed;
+    z-index: 1051; /* Above toasts */
+    pointer-events: none;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    transition: transform 0.2s ease-out, opacity 0.5s ease-out;
+    transform-origin: center center;
+}
+
+/*---------------------------------
   Shared Section Styles
 ---------------------------------*/
 .section-title {
