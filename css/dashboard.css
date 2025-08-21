@@ -48,8 +48,6 @@
 
 .sidebar-nav ul {
     list-style: none;
-    flex-direction: column;
-    gap: 0.3rem;
 }
 
 .sidebar-nav ul li a {
@@ -173,7 +171,6 @@
     align-items: center;
     font-size: 1.4rem;
     transition: all 0.3s ease;
-    position: relative;
 }
 
 .theme-toggle-dash:hover {
@@ -184,7 +181,7 @@
 
 /* Content Panel / Table */
 .content-panel {
-    padding: 0; 
+    padding: 0; /* Remove default panel padding */
     border-radius: 1rem;
     overflow: hidden; /* To clip table corners */
 }
@@ -228,6 +225,26 @@
 
 .product-table tbody tr:last-child td {
     border-bottom: none;
+}
+
+.status-icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: 700;
+}
+
+.status-icon.true {
+    background-color: var(--success-color);
+}
+
+.status-icon.false {
+    background-color: var(--secondary-color);
+    opacity: 0.5;
 }
 
 .status-badge {
