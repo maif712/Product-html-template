@@ -48,6 +48,7 @@
 
 .sidebar-nav ul {
     list-style: none;
+    flex-direction: column;
 }
 
 .sidebar-nav ul li a {
