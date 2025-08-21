@@ -145,8 +145,8 @@
     left: 0;
     border-radius: 50%;
     background-color: var(--primary-color);
-    width: 30px; /* Larger dots for a better gooey effect */
-    height: 30px;
+    width: 22px; /* Smaller dots */
+    height: 22px;
     /* transition is no longer needed, animation is pure JS */
 }
 
