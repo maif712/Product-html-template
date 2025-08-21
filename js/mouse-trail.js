@@ -41,7 +41,10 @@ document.addEventListener('DOMContentLoaded', () => {
         prevDot.y += (cursor.y - prevDot.y) * 0.6;
 
         // Animate the first dot
-        prevDot.element.style.transform = `translate(${prevDot.x}px, ${prevDot.y}px)`;
+        const firstDotSize = 12;
+        prevDot.element.style.width = `${firstDotSize}px`;
+        prevDot.element.style.height = `${firstDotSize}px`;
+        prevDot.element.style.transform = `translate(${prevDot.x - firstDotSize / 2}px, ${prevDot.y - firstDotSize / 2}px)`;
 
         // Animate the rest of the dots
         for (let i = 1; i < numDots; i++) {
