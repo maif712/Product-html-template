@@ -62,13 +62,34 @@
     text-decoration: none;
     border-radius: 0.5rem;
     transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.sidebar-nav ul li a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 4px;
+    background-color: var(--primary-color);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.3s ease;
 }
 
 .sidebar-nav ul li.active a,
 .sidebar-nav ul li a:hover {
     color: var(--primary-color);
     background-color: var(--shadow-color);
-    transform: translateX(5px);
+    transform: translateX(10px);
+}
+
+.sidebar-nav ul li.active a::before,
+.sidebar-nav ul li a:hover::before {
+    transform: scaleY(1);
+    transform-origin: top;
 }
 
 .sidebar-nav ul li a svg {
