@@ -23,6 +23,47 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /*!
+ * Directional Aware Hover Effect for Navigation
+ */
+document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    const getDirection = (e, element) => {
+        const rect = element.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const w = rect.width;
+        const h = rect.height;
+
+        const top = Math.abs(y);
+        const bottom = Math.abs(y - h);
+        const left = Math.abs(x);
+        const right = Math.abs(x - w);
+
+        const min = Math.min(top, bottom, left, right);
+
+        switch (min) {
+            case left: return 'from-left';
+            case right: return 'from-right';
+            case top: return 'from-top';
+            case bottom: return 'from-bottom';
+            default: return 'from-left';
+        }
+    };
+
+    navLinks.forEach(link => {
+        link.addEventListener('mouseenter', (e) => {
+            link.dataset.direction = getDirection(e, link);
+        });
+
+        link.addEventListener('mouseleave', (e) => {
+            // Set the exit direction to be the same as the entry for a consistent out-animation
+            link.dataset.direction = getDirection(e, link);
+        });
+    });
+});
+
+/*!
  * Toast Notification Function
  * @param {string} message - The message to display.
  * @param {string} type - 'success' or 'error'.
