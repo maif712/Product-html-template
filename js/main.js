@@ -23,44 +23,39 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /*!
- * Directional Aware Hover Effect for Navigation
+ * Sliding Tab Navigation Effect
  */
 document.addEventListener('DOMContentLoaded', () => {
-    const navLinks = document.querySelectorAll('.nav-links a');
+    const navLinksContainer = document.querySelector('.nav-links');
+    const navLinks = document.querySelectorAll('.nav-links > li > a');
+    const highlight = document.querySelector('.nav-highlight');
 
-    const getDirection = (e, element) => {
-        const rect = element.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const w = rect.width;
-        const h = rect.height;
+    if (!navLinksContainer || !highlight) return;
 
-        const top = Math.abs(y);
-        const bottom = Math.abs(y - h);
-        const left = Math.abs(x);
-        const right = Math.abs(x - w);
+    function highlightLink(e) {
+        const link = e.target;
+        const linkCoords = link.getBoundingClientRect();
+        const containerCoords = navLinksContainer.getBoundingClientRect();
 
-        const min = Math.min(top, bottom, left, right);
+        const coords = {
+            width: linkCoords.width,
+            height: linkCoords.height,
+            top: linkCoords.top - containerCoords.top,
+            left: linkCoords.left - containerCoords.left
+        };
 
-        switch (min) {
-            case left: return 'from-left';
-            case right: return 'from-right';
-            case top: return 'from-top';
-            case bottom: return 'from-bottom';
-            default: return 'from-left';
-        }
-    };
+        highlight.style.width = `${coords.width}px`;
+        highlight.style.height = `${coords.height}px`;
+        highlight.style.transform = `translate(${coords.left}px, ${coords.top}px)`;
+        highlight.style.opacity = '1';
+    }
 
-    navLinks.forEach(link => {
-        link.addEventListener('mouseenter', (e) => {
-            link.dataset.direction = getDirection(e, link);
-        });
+    function hideHighlight() {
+        highlight.style.opacity = '0';
+    }
 
-        link.addEventListener('mouseleave', (e) => {
-            // Set the exit direction to be the same as the entry for a consistent out-animation
-            link.dataset.direction = getDirection(e, link);
-        });
-    });
+    navLinks.forEach(a => a.addEventListener('mouseenter', highlightLink));
+    navLinksContainer.addEventListener('mouseleave', hideHighlight);
 });
 
 /*!
