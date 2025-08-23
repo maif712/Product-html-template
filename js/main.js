@@ -59,6 +59,22 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /*!
+ * Mobile Navigation Toggle
+ */
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburgerBtn = document.querySelector('.hamburger-btn');
+    const body = document.body;
+
+    if (hamburgerBtn) {
+        hamburgerBtn.addEventListener('click', () => {
+            body.classList.toggle('mobile-nav-open');
+            const isExpanded = body.classList.contains('mobile-nav-open');
+            hamburgerBtn.setAttribute('aria-expanded', isExpanded);
+        });
+    }
+});
+
+/*!
  * Toast Notification Function
  * @param {string} message - The message to display.
  * @param {string} type - 'success' or 'error'.
