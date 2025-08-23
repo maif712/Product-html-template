@@ -96,14 +96,9 @@
 }
 
 /* Hero Visual (Scrolling Columns) */
-@keyframes scroll-up {
+@keyframes scroll {
     from { transform: translateY(0); }
     to { transform: translateY(-50%); }
-}
-
-@keyframes scroll-down {
-    from { transform: translateY(-50%); }
-    to { transform: translateY(0); }
 }
 
 .hero-visual {
@@ -130,14 +125,16 @@
     padding: 0; /* In case ul is used */
 }
 
+.scrolling-column {
+    animation: scroll 40s linear infinite;
+}
+
 .scrolling-column:nth-child(even) {
-    animation: scroll-up 40s linear infinite;
+    /* This will scroll up by default */
 }
 
 .scrolling-column:nth-child(odd) {
-    animation: scroll-down 40s linear infinite;
-    position: relative;
-    top: -50%;
+    animation-direction: reverse;
 }
 
 .product-card-sm {
