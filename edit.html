@@ -135,7 +135,11 @@
                 </fieldset>
 
                 <div class="form-actions">
-                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                    <button type="submit" class="btn btn-primary btn-submit">
+                        <span class="btn-text">Save Changes</span>
+                        <span class="btn-spinner"></span>
+                        <span class="btn-success-icon">✔</span>
+                    </button>
                     <a href="dashboard.html" class="btn btn-secondary">Cancel</a>
                 </div>
             </form>
@@ -186,5 +190,36 @@
     <div class="toast-container"></div>
 
     <script src="js/main.js"></script>
+    <script>
+        // Interactive form submission script
+        const form = document.querySelector('.product-form');
+        const submitBtn = form.querySelector('.btn-submit');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            if (submitBtn.classList.contains('loading')) return;
+
+            // --- Start loading state ---
+            submitBtn.classList.add('loading');
+            submitBtn.disabled = true;
+
+            // --- Simulate network request ---
+            setTimeout(() => {
+                // --- Switch to success state ---
+                submitBtn.classList.remove('loading');
+                submitBtn.classList.add('success');
+
+                // --- Show toast ---
+                showToast('Product saved successfully!', 'success');
+
+                // --- Revert button to normal state ---
+                setTimeout(() => {
+                    submitBtn.classList.remove('success');
+                    submitBtn.disabled = false;
+                }, 2000);
+
+            }, 1500);
+        });
+    </script>
 </body>
 </html>
