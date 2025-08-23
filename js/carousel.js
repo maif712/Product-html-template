@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const items = Array.from(document.querySelectorAll('.carousel-3d-item'));
     const prevButton = document.querySelector('.carousel-3d-prev');
     const nextButton = document.querySelector('.carousel-3d-next');
+    const dots = Array.from(document.querySelectorAll('.dot'));
 
     const totalItems = items.length;
     let currentIndex = 0;
@@ -35,6 +36,11 @@ document.addEventListener('DOMContentLoaded', () => {
             item.style.transform = transform;
             item.style.zIndex = zIndex;
             item.style.opacity = opacity;
+        });
+
+        // Update active dot
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentIndex);
         });
     }
 
@@ -67,6 +73,12 @@ document.addEventListener('DOMContentLoaded', () => {
             if (i !== currentIndex) {
                 goToIndex(i);
             }
+        });
+    });
+
+    dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => {
+            goToIndex(i);
         });
     });
 
