@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /*!
- * Sliding Tab Navigation Effect
+ * Springy/Watery Navigation Hover Effect
  */
 document.addEventListener('DOMContentLoaded', () => {
     const navLinksContainer = document.querySelector('.nav-links');
@@ -32,30 +32,65 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!navLinksContainer || !highlight) return;
 
-    function highlightLink(e) {
-        const link = e.target;
-        const linkCoords = link.getBoundingClientRect();
-        const containerCoords = navLinksContainer.getBoundingClientRect();
+    let target = { x: 0, y: 0, width: 0, height: 0, opacity: 0 };
+    let current = { ...target };
+    let velocity = { x: 0, y: 0, width: 0, height: 0 };
 
-        const coords = {
-            width: linkCoords.width,
-            height: linkCoords.height,
-            top: linkCoords.top - containerCoords.top,
-            left: linkCoords.left - containerCoords.left
-        };
+    // Physics parameters
+    const stiffness = 0.1;
+    const damping = 0.6;
 
-        highlight.style.width = `${coords.width}px`;
-        highlight.style.height = `${coords.height}px`;
-        highlight.style.transform = `translate(${coords.left}px, ${coords.top}px)`;
-        highlight.style.opacity = '1';
+    function updateTarget(element) {
+        if (!element) {
+            target.opacity = 0;
+            return;
+        }
+        const rect = element.getBoundingClientRect();
+        const containerRect = navLinksContainer.getBoundingClientRect();
+        target.x = rect.left - containerRect.left;
+        target.y = rect.top - containerRect.top;
+        target.width = rect.width;
+        target.height = rect.height;
+        target.opacity = 1;
     }
 
-    function hideHighlight() {
-        highlight.style.opacity = '0';
+    navLinks.forEach(link => {
+        link.addEventListener('mouseenter', () => updateTarget(link));
+    });
+
+    navLinksContainer.addEventListener('mouseleave', () => updateTarget(null));
+
+    function animate() {
+        // Update position
+        let forceX = (target.x - current.x) * stiffness;
+        velocity.x = (velocity.x + forceX) * damping;
+        current.x += velocity.x;
+
+        let forceY = (target.y - current.y) * stiffness;
+        velocity.y = (velocity.y + forceY) * damping;
+        current.y += velocity.y;
+
+        // Update size
+        let forceWidth = (target.width - current.width) * stiffness;
+        velocity.width = (velocity.width + forceWidth) * damping;
+        current.width += velocity.width;
+
+        let forceHeight = (target.height - current.height) * stiffness;
+        velocity.height = (velocity.height + forceHeight) * damping;
+        current.height += velocity.height;
+
+        // Update opacity
+        current.opacity += (target.opacity - current.opacity) * 0.1;
+
+        highlight.style.transform = `translate(${current.x}px, ${current.y}px)`;
+        highlight.style.width = `${current.width}px`;
+        highlight.style.height = `${current.height}px`;
+        highlight.style.opacity = current.opacity;
+
+        requestAnimationFrame(animate);
     }
 
-    navLinks.forEach(a => a.addEventListener('mouseenter', highlightLink));
-    navLinksContainer.addEventListener('mouseleave', hideHighlight);
+    animate();
 });
 
 /*!
