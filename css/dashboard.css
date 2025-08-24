@@ -143,14 +143,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2rem;
     color: #fff;
 }
+
+.stat-icon svg {
+    width: 28px;
+    height: 28px;
+}
+
 /* In a real app, these would be SVGs */
-.icon-products { background: linear-gradient(45deg, #4f46e5, #818cf8); }
-.icon-stock { background: linear-gradient(45deg, #10b981, #6ee7b7); }
-.icon-categories { background: linear-gradient(45deg, #f59e0b, #fcd34d); }
-.icon-revenue { background: linear-gradient(45deg, #ef4444, #f87171); }
+.icon-products { background-color: var(--primary-color); }
+.icon-stock { background-color: var(--success-color); }
+.icon-categories { background-color: #f59e0b; } /* Using a literal for orange */
+.icon-revenue { background-color: var(--error-color); }
 
 
 .stat-info {

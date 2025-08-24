@@ -233,6 +233,9 @@ header nav {
     z-index: 1;
     color: var(--text-color);
     transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .nav-links > li > a:hover {
